@@ -23,36 +23,77 @@ def main():
 
 def generateNumber():  # Wait for a push, return random die value
     throw = random.randint(1, 6)
-    
+
     pushButton.wait_for_press()  # Wait for button press
     time.sleep(0.030)  # Debounce delay
-    
+
     print(f"Dice rolled: {throw}")
     return throw
 
 def displayNumber(number):
-
-    # This is an example of how to turn on LEDs for a specific number
-    if number == 5:
+    if number == 1:
+        led3.on()
+     
+        time.sleep(1)
+    
+        ledsOff()
+    elif number == 2:
+        
+        led5.on()
+        led1.on()
+     
+        time.sleep(1)
+    
+        ledsOff()
+    elif number == 3:
+        
+        led5.on()
+        led1.on()
+        led3.on()
+        
+        time.sleep(1)
+    
+        ledsOff()
+    elif number == 4:
+        
+        led5.on()
+        led1.on()
+        led0.on()
+        led6.on()
+        
+    elif number == 5:
         led0.on()
         led1.on()
         led3.on()
         led5.on()
         led6.on()
         
-    time.sleep(1)
+        time.sleep(1)
     
-    ledsOff()
+        ledsOff()
+    elif number == 6:
+        
+        led5.on()
+        led1.on()
+        led0.on()
+        led6.on()
+        led2.on()
+        led4.on()
+     
+        time.sleep(1)
+    
+        ledsOff()
+
 
 def ledsOff():
-    #Turn off all LEDs.
-    led0.off()
-    led1.off()
-    led2.off()
-    led3.off()
-    led4.off()
-    led5.off()
-    led6.off()
+        #Turn off all LEDs.
+        led0.off()
+        led1.off()
+        led2.off()
+        led3.off()
+        led4.off()
+        led5.off()
+        led6.off()
     
 if __name__ == "__main__":
-    main()
+        main()
